@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Orçamento Finger Piedade</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&display=swap" rel="stylesheet">
+<style>
+/* VOICE  occasion: a client quote, clear and confident, one service, one price
+   IDEA   a printed proposal sheet from Luan's studio, same black-and-blue identity as his portfolio
+   PICTURE the price as the hero, on a blue band, beside a drawn camera frame over a house silhouette
+   COLOUR ground #0e0e0f, ink #f4efe8, blue gradient #0b3196→#2b7bf0, accent #8cc8ff
+   TYPE   Archivo expanded 800 for display, Archivo 400 for text
+   LAYOUT laptop: title and price left, picture right; then scope, deliverables, conditions in columns; phone: stacked */
+:root{color-scheme:dark;--bg:#0e0e0f;--bg2:#161617;--line:#262b36;--ink:#f4efe8;--mute:#b4b8c2;--g1:#0b3196;--g2:#2b7bf0;--acc:#8cc8ff;--blue:linear-gradient(135deg,var(--g1),var(--g2))}
+:root[data-theme=light],:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+body{margin:0;background:var(--bg);color:var(--ink);font:16.5px/1.6 "Archivo",system-ui,sans-serif;overflow-x:clip}
+.wrap{max-width:1120px;margin:0 auto;padding-inline:max(5vw,16px)}
+h1,h2,h3{font-stretch:125%;font-weight:800;letter-spacing:-.02em;line-height:1.05;margin:0;text-wrap:balance}
+h1{font-size:clamp(34px,5vw,58px)}
+h2{font-size:clamp(24px,2.8vw,32px);margin-bottom:22px}
+h3{font-size:18px;line-height:1.25}
+p{margin:0 0 1em}
+header{border-bottom:1px solid var(--line)}
+header .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding-block:18px}
+.logo{font-stretch:125%;font-weight:800;font-size:19px}
+.logo span{color:#4d9bff}
+.ref{font-size:14px;color:var(--mute)}
+.top{padding-block:clamp(36px,6vw,80px)}
+.top .wrap{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(28px,5vw,64px);align-items:center}
+.for{font-size:15px;color:var(--acc);font-weight:600;margin-bottom:14px}
+.top .lead{font-size:clamp(17px,1.5vw,19px);color:var(--mute);max-width:52ch;margin-top:18px}
+.price{margin-top:30px;background:var(--blue);border-radius:18px;padding:24px 28px;display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap}
+.price small{display:block;font-size:14px;color:#d6e6ff}
+.price b{display:block;font-stretch:125%;font-weight:800;font-size:clamp(44px,6vw,68px);line-height:1;white-space:nowrap;margin-top:6px}
+.price span{font-size:15px;color:#e8f1ff;max-width:22ch;line-height:1.4}
+.pic{position:relative;aspect-ratio:1;max-width:440px;width:100%;margin-inline:auto}
+.pic svg{position:absolute;inset:0;width:100%;height:100%}
+section{padding-block:clamp(36px,5vw,64px);border-top:1px solid var(--line)}
+.cols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.card{background:var(--bg2);border:1px solid var(--line);border-radius:16px;padding:24px}
+.card h3{margin-bottom:12px}
+.card ul{margin:0;padding-left:18px;color:var(--mute);font-size:15.5px}
+.card li{margin-bottom:6px}
+.card .big{font-stretch:125%;font-weight:800;font-size:34px;line-height:1;color:var(--acc);margin-bottom:10px;white-space:nowrap}
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;position:relative}
+.steps li{position:relative;padding-top:40px}
+.steps li::before{content:"";position:absolute;top:4px;left:0;width:18px;height:18px;border-radius:50%;border:3px solid #4d9bff;background:var(--bg)}
+.steps li::after{content:"";position:absolute;top:12px;left:26px;right:-10px;height:2px;background:#24407a}
+.steps li:last-child::after{display:none}
+.steps b{display:block;font-stretch:115%;margin-bottom:6px}
+.steps span{color:var(--mute);font-size:15px}
+.cond{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:0 48px}
+.cond div{display:flex;justify-content:space-between;gap:20px;padding:14px 0;border-bottom:1px solid var(--line);font-size:15.5px}
+.cond div span:first-child{color:var(--mute)}
+.cond div span:last-child{text-align:right;font-weight:600}
+.cta{background:var(--blue);border:0}
+.cta .wrap{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:28px;align-items:center}
+.cta h2{margin:0 0 10px}
+.cta p{margin:0;color:#e8f1ff}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:0 26px;border-radius:999px;background:#fff;color:#0b3196;font-weight:700;text-decoration:none}
+.btn:focus-visible{outline:2px solid #fff;outline-offset:3px}
+.cta .side{display:flex;flex-direction:column;align-items:flex-start;gap:10px}
+.cta .side small{color:#d6e6ff;font-size:14px}
+footer{padding:24px 0;color:var(--mute);font-size:14px}
+@media(max-width:860px){.top .wrap,.cta .wrap{grid-template-columns:minmax(0,1fr)}.pic{max-width:340px}.cols{grid-template-columns:minmax(0,1fr)}.steps{grid-template-columns:minmax(0,1fr) minmax(0,1fr);row-gap:28px}.steps li:nth-child(2)::after{display:none}.cond{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:480px){.steps{grid-template-columns:minmax(0,1fr)}.steps li::after{display:none}}
+@media(prefers-reduced-motion:no-preference){.flash{animation:flash 5s ease-in-out infinite}@keyframes flash{0%,86%,100%{opacity:0}90%{opacity:.55}}}
+</style>
+</head>
+<body>
+<header><div class="wrap"><div class="logo">Luan<span>.</span>Silva</div><div class="ref">Proposta comercial · 23/11/2026</div></div></header>
+
+<div class="top"><div class="wrap">
+  <div>
+    <div class="for">Para Finger · Piedade</div>
+    <h1>Captação de fotos e vídeos da casa em Aldeia</h1>
+    <p class="lead">Imagens profissionais para apresentar o imóvel com a qualidade que ele merece: fotos que valorizam cada ambiente e vídeos pensados para prender a atenção nas redes sociais.</p>
+    <div class="price"><div><small>Investimento total</small><b>R$ 700</b></div><span>Captação, deslocamento, edição e entrega dos arquivos inclusos.</span></div>
+  </div>
+  <div class="pic" role="img" aria-label="Ilustração de uma casa enquadrada pelo visor de uma câmera">
+    <svg viewBox="0 0 400 400">
+      <defs>
+        <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0b3196"/><stop offset="1" stop-color="#2b7bf0"/></linearGradient>
+        <linearGradient id="wall" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f4efe8"/><stop offset="1" stop-color="#cfd6e4"/></linearGradient>
+        <clipPath id="frame"><rect x="40" y="40" width="320" height="320" rx="26"/></clipPath>
+      </defs>
+      <g clip-path="url(#frame)">
+        <rect x="40" y="40" width="320" height="320" fill="url(#sky)"/>
+        <circle cx="300" cy="110" r="26" fill="#8cc8ff" opacity=".55"/>
+        <path d="M40 300 Q120 268 200 290 T360 280 V360 H40Z" fill="#0a2462"/>
+        <g fill="#0d3a8f">
+          <path d="M62 300 q14 -60 28 0z"/><path d="M84 302 q16 -78 32 0z"/><path d="M318 296 q14 -66 28 0z"/><path d="M296 300 q12 -48 24 0z"/>
+        </g>
+        <rect x="128" y="196" width="150" height="104" fill="url(#wall)"/>
+        <rect x="236" y="196" width="42" height="104" fill="#b7c1d4"/>
+        <path d="M112 202 L203 140 L294 202 Z" fill="#141a26"/>
+        <path d="M203 140 L294 202 L280 202 L203 150Z" fill="#26324a"/>
+        <rect x="146" y="218" width="40" height="30" rx="3" fill="#8cc8ff"/>
+        <rect x="146" y="218" width="40" height="30" rx="3" fill="none" stroke="#141a26" stroke-width="3"/>
+        <rect x="196" y="236" width="28" height="64" rx="3" fill="#141a26"/>
+        <rect x="244" y="218" width="24" height="30" rx="3" fill="#8cc8ff" opacity=".85"/>
+        <rect x="40" y="300" width="320" height="60" fill="#071a48"/>
+        <path d="M150 300 L210 300 L250 360 L130 360Z" fill="#0b2a6b"/>
+        <rect class="flash" x="40" y="40" width="320" height="320" fill="#fff" opacity="0"/>
+      </g>
+      <g fill="none" stroke="#f4efe8" stroke-width="5" stroke-linecap="round">
+        <path d="M20 82 V20 H82"/><path d="M318 20 H380 V82"/><path d="M380 318 V380 H318"/><path d="M82 380 H20 V318"/>
+      </g>
+      <g stroke="#f4efe8" stroke-opacity=".35" stroke-width="1.5">
+        <line x1="146.7" y1="40" x2="146.7" y2="360"/><line x1="253.3" y1="40" x2="253.3" y2="360"/>
+        <line x1="40" y1="146.7" x2="360" y2="146.7"/><line x1="40" y1="253.3" x2="360" y2="253.3"/>
+      </g>
+      <circle cx="350" cy="58" r="7" fill="#ff4d4d"/>
+    </svg>
+  </div>
+</div></div>
+
+<section><div class="wrap">
+  <h2>O que está incluso</h2>
+  <div class="cols">
+    <div class="card"><div class="big">1 diária</div><h3>Captação no imóvel</h3><ul><li>Visita de até 4 horas na casa em Aldeia</li><li>Ambientes internos, fachada e área externa</li><li>Horário escolhido pela melhor luz natural</li><li>Deslocamento incluso</li></ul></div>
+    <div class="card"><div class="big">30 fotos</div><h3>Fotografia tratada</h3><ul><li>Correção de cor, luz e perspectiva</li><li>Alta resolução para anúncio e impressão</li><li>Versões otimizadas para Instagram</li><li>Seleção dos melhores ângulos de cada ambiente</li></ul></div>
+    <div class="card"><div class="big">3 vídeos</div><h3>Vídeos editados</h3><ul><li>1 vídeo tour horizontal para YouTube, de até 3 min, com apresentação falada do imóvel</li><li>1 vídeo tour vertical de até 60s para Reels</li><li>1 corte curto de até 15s para Stories</li><li>Trilha, ritmo e legendas, nos formatos 16:9 e 9:16</li></ul></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <h2>Como funciona</h2>
+  <ol class="steps">
+    <li><b>Confirmação</b><span>Aprovação da proposta e pagamento do sinal.</span></li>
+    <li><b>Agendamento</b><span>Definimos data e horário da captação com o responsável pelo imóvel.</span></li>
+    <li><b>Captação</b><span>Fotos e vídeos produzidos na casa em uma única visita.</span></li>
+    <li><b>Entrega</b><span>Arquivos editados enviados por link em até 5 dias úteis.</span></li>
+  </ol>
+</div></section>
+
+<section><div class="wrap">
+  <h2>Condições</h2>
+  <div class="cond">
+    <div><span>Valor total</span><span>R$ 700,00, deslocamento incluso</span></div>
+    <div><span>Pagamento</span><span>50% na aprovação do orçamento, 50% no dia da captação</span></div>
+    <div><span>Forma de pagamento</span><span>Pix ou transferência</span></div>
+    <div><span>Prazo de entrega</span><span>Até 5 dias úteis após a captação</span></div>
+    <div><span>Ajustes na edição</span><span>2 rodadas inclusas</span></div>
+    <div><span>Validade da proposta</span><span>15 dias, até 08/12/2026</span></div>
+  </div>
+  <p style="color:var(--mute);font-size:15px;margin-top:20px">Não incluso nesta proposta: imagens aéreas com drone, produção de ambientes (decoração e móveis) e gestão de anúncios. Esses itens podem ser orçados à parte.</p>
+</div></section>
+
+<section class="cta"><div class="wrap">
+  <div><h2>Vamos marcar a captação?</h2><p>É só confirmar a proposta que eu já reservo a data na agenda.</p></div>
+  <div class="side"><a class="btn" href="https://wa.me/5581987449704?text=Ol%C3%A1%20Luan%2C%20quero%20aprovar%20a%20proposta%20de%20capta%C3%A7%C3%A3o%20da%20casa%20em%20Aldeia.">Aprovar pelo WhatsApp</a><small>(81) 98744-9704</small></div>
+</div></section>
+
+<footer><div class="wrap">Luan Silva · Estratégia, conteúdo e direção criativa</div></footer>
+</body>
+</html>
